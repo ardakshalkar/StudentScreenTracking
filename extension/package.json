@@ -1,0 +1,8 @@
+{
+  "name": "classroom-screens-extension",
+  "version": "1.0.2",
+  "private": true,
+  "type": "module",
+  "scripts": {"build": "tsc --noEmit && node build.mjs", "check": "tsc --noEmit"},
+  "devDependencies": {"@types/chrome": "^0.1.24", "esbuild": "^0.25.0", "typescript": "^5.9.3"}
+}

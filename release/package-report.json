@@ -1,0 +1,21 @@
+{
+  "version": "1.0.2",
+  "package": "classroom-screen-sharing-1.0.2.zip",
+  "sha256": "99224cbf2cbfd98b61a99f3c0f364b93ba736c815a8e1bc0e61ac0eaed2e3c8a",
+  "size_bytes": 25372,
+  "files": [
+    "help.html",
+    "icons/icon-128.png",
+    "icons/icon-16.png",
+    "icons/icon-32.png",
+    "icons/icon-48.png",
+    "icons/icon.svg",
+    "manifest.json",
+    "popup.html",
+    "popup.js",
+    "privacy.html",
+    "session.html",
+    "session.js",
+    "style.css"
+  ]
+}

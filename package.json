@@ -1,0 +1,21 @@
+{
+  "name": "classroom-screens",
+  "private": true,
+  "workspaces": [
+    "web",
+    "extension"
+  ],
+  "scripts": {
+    "build": "npm run build -w web && npm run build -w extension",
+    "dev": "npm run dev -w web",
+    "check": "npm run check -w web && npm run check -w extension",
+    "test:ui": "playwright test",
+    "test:extension": "node --test tests/extension.test.mjs tests/google-auth.test.mjs tests/lan-http.test.mjs",
+    "release:extension": "python scripts/release_assets.py && npm run build -w extension && python scripts/package_extension.py"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.64.1",
+    "@types/ws": "^8.18.2",
+    "ws": "^8.22.0"
+  }
+}

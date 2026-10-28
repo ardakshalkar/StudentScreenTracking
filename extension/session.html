@@ -1,0 +1,17 @@
+<!doctype html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Classroom sharing controls</title><link rel="stylesheet" href="style.css"></head><body>
+<main><div class="eyebrow">STUDENT EXTENSION</div><h1>Share your workspace</h1>
+<p>Choose a screen or application window. Your teacher sees only that source. No webcam, microphone, audio, keystrokes, clipboard, or files are accessed.</p>
+<form id="join"><label>Classroom server URL<input id="server" type="url" required placeholder="https://classroom.example.edu"></label>
+<label class="consent"><input id="lanHttp" type="checkbox"> Allow unencrypted HTTP on this Wi-Fi/LAN (private IPv4 addresses only).</label><p id="transport" role="status">HTTPS is the default. LAN HTTP exposes screenshots and credentials to network interception; use it only on a trusted classroom network.</p>
+<div id="manualIdentity"><label>Your name (code-only classrooms)<input id="name" maxlength="80" autocomplete="name"></label><label>Student ID (code-only classrooms)<input id="studentId" maxlength="80"></label></div>
+<label>Classroom code<input id="code" required minlength="8" maxlength="8" pattern="[A-Za-z2-9]{8}" autocomplete="off"></label>
+<button id="connect" type="submit">Check classroom / join</button></form>
+<button id="google" hidden>Sign in with Google &amp; join</button><p id="account">Your classroom may require Google sign-in from an approved school domain.</p>
+<section class="panel"><strong>Before you share</strong><p>Your selected screen/window is transmitted to the classroom server above for your teacher to view. The teacher can enable periodic screenshot recording and optional uploads to their Google Drive. Anything visible in the selected source may be included. Close private content first.</p><label class="consent"><input id="consent" type="checkbox"> I understand who can view my selected screen and that the classroom may save periodic screenshots.</label><p><a href="privacy.html" target="_blank">Privacy &amp; data use</a> · <a href="help.html" target="_blank">Instructions</a></p></section>
+<section class="panel"><p id="status" role="status" aria-live="polite">Not sharing</p><p id="recording">Recording status will appear after joining.</p>
+<button id="start" disabled>Start Sharing</button><button id="stop" class="danger" disabled>Stop Sharing</button>
+<p id="quality">Overview · 640px · every 2.5 seconds</p><p id="detail"></p></section>
+<p>Keep this extension window open while sharing. You can switch to VS Code, Jupyter, PyCharm, or any other application. Closing this window or Chrome’s “Stop sharing” control ends capture. A closed or minimized source window may stop updating; sharing the full screen is more reliable.</p>
+<p>Your name and ID are remembered on this device. The teacher may enable periodic screenshot recording; the status above shows the current setting. Stop Sharing ends transmission immediately.</p>
+<video id="source" autoplay muted playsinline hidden></video><canvas id="canvas" hidden></canvas></main>
+<script type="module" src="session.js"></script></body></html>

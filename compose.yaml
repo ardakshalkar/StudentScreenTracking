@@ -1,0 +1,48 @@
+services:
+  backend:
+    build:
+      context: .
+      dockerfile: backend/Dockerfile
+    environment:
+      TEACHER_PASSWORD: ${TEACHER_PASSWORD:?Set TEACHER_PASSWORD in .env}
+      APP_SECRET: ${APP_SECRET:?Set APP_SECRET in .env}
+      PUBLIC_ORIGIN: ${PUBLIC_ORIGIN:-https://localhost}
+      ALLOW_LAN_HTTP: ${ALLOW_LAN_HTTP:-false}
+      EXTENSION_IDS: ${EXTENSION_IDS:-}
+      RETENTION_DAYS: ${RETENTION_DAYS:-30}
+      GOOGLE_CLIENT_ID: ${GOOGLE_CLIENT_ID:-}
+      GOOGLE_CLIENT_SECRET: ${GOOGLE_CLIENT_SECRET:-}
+      TOKEN_ENCRYPTION_KEY: ${TOKEN_ENCRYPTION_KEY:-}
+      STUDENT_AUTH_MODE: ${STUDENT_AUTH_MODE:-code}
+      STUDENT_ALLOWED_DOMAINS: ${STUDENT_ALLOWED_DOMAINS:-}
+      STUDENT_GOOGLE_CLIENT_ID: ${STUDENT_GOOGLE_CLIENT_ID:-}
+      STUDENT_GOOGLE_CLIENT_SECRET: ${STUDENT_GOOGLE_CLIENT_SECRET:-}
+    volumes:
+      - classroom_data:/data
+    restart: unless-stopped
+    healthcheck:
+      test: [CMD, python, -c, "import urllib.request; urllib.request.urlopen('http://127.0.0.1:8000/api/health')"]
+      interval: 15s
+      timeout: 5s
+      retries: 3
+  web:
+    build:
+      context: .
+      dockerfile: deploy/Dockerfile.web
+    environment:
+      SITE_ADDRESS: ${SITE_ADDRESS:-localhost}
+    ports:
+      - "80:80"
+      - "443:443"
+      - "443:443/udp"
+    volumes:
+      - caddy_data:/data
+      - caddy_config:/config
+    depends_on:
+      backend:
+        condition: service_healthy
+    restart: unless-stopped
+volumes:
+  classroom_data:
+  caddy_data:
+  caddy_config:

@@ -1,0 +1,38 @@
+{
+  "checked_date": "2026-10-24",
+  "item_id": "femgaepkcdhfebjcfpbgclhnmhffghnb",
+  "version": "1.0.1",
+  "local_prepared_version": "1.0.2",
+  "local_prepared_package": "classroom-screen-sharing-1.0.2.zip",
+  "local_prepared_uploaded": false,
+  "status": "draft",
+  "submitted_for_review": false,
+  "publicly_installable": false,
+  "dashboard_url": "https://chrome.google.com/webstore/devconsole/d705eb80-52d1-4fe5-9b93-4e0509374349/femgaepkcdhfebjcfpbgclhnmhffghnb/edit",
+  "uploaded_package": "classroom-screen-sharing-1.0.1.zip",
+  "uploaded_sha256": "864679ce34724f5540761e8f30e8743354b5c65a88be0c0053f692744d0e55c1",
+  "saved": [
+    "Package accepted; new draft allocated",
+    "Listing description",
+    "Education category and English language",
+    "Store icon, dashboard screenshot, small promo and marquee artwork",
+    "Single-purpose and desktopCapture/storage/identity permission justifications",
+    "No remote code declaration",
+    "PII, authentication information, location/IP, user activity and website-content categories"
+  ],
+  "google_reported_blockers": [
+    "Certify data usage complies with developer programme policies",
+    "Provide publisher contact email",
+    "Verify publisher contact email",
+    "Provide public privacy policy URL"
+  ],
+  "operational_acceptance_pending": [
+    "Publisher confirms public support identity/contact and privacy host",
+    "Real extension screen/window capture and two-device acceptance test",
+    "Reviewer-accessible classroom server/test instructions",
+    "Actual Google school login and optional teacher Drive acceptance if enabled",
+    "Hosted YouTube video link if the owner wants a Store promo video"
+  ],
+  "video": "video/classroom-walkthrough.mp4",
+  "proof_screenshot": "store-assets/submission-blockers.png"
+}

@@ -1,0 +1,17 @@
+node_modules/
+dist/
+.env
+.env.*
+!.env.example
+.venv/
+__pycache__/
+.pytest_cache/
+.npm-cache/
+data/
+test-data/
+artifacts/
+*.log
+release/video/scene-*.wav
+release/video/scene-*.mp4
+release/video/scene-*.png
+release/video/video-frame-check.png
